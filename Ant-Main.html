@@ -1,0 +1,36 @@
+<!doctype html><html><head>
+<!--
+
+    Programmed by Jarod Lewins
+	jarodlewins@gmail.com
+	09/28/2019
+	
+	This is the main HTML File to produce the page on which langton's ant runs.
+	Simply open this file in a browser to see the ant run
+	
+-->
+<title>Langton's Ant</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body><h1>Cellular Automaton Ant #12</h1>
+<h4>Jarod Lewins 2019</h4>
+
+<canvas id="grid" width="820" height="820"></canvas>
+
+</body>
+<script src="ant.js"></script>
+<script>
+
+// =====================================================  Main ====
+
+  var canvas = document.getElementById( "grid" );
+  var context = canvas.getContext( "2d" );
+  var ant = new Ant(0, canvas.width/2, canvas.height/2); //define start position of center and orient ant north
+  
+  // Draw a grid
+  draw_grid( context, 20, 1, 'white', 'yellow' );
+  //iterate langtons ant 1000 times
+  iterate(context, ant, 1000);
+
+</script>
+</html>
